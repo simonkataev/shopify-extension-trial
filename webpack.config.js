@@ -1,10 +1,10 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
   },
   module: {
     rules: [
@@ -12,9 +12,9 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
       },
@@ -22,7 +22,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: "style-loader",
             options: {
               insert: function insertAtTop(element) {
                 document.head.appendChild(element);
@@ -30,19 +30,18 @@ module.exports = {
             },
           },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: '[sha1:hash:hex:4]'
-            }
-          }
+            },
+          },
         ],
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
   },
   // This is a simplified configuration for demonstration purposes
   // In a real project, you would use MiniCssExtractPlugin to extract CSS to a separate file

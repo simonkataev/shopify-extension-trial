@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './styles.css';
 
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,0 +1,107 @@
+/* Product Features Component Styles */
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.tab {
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  color: #000;
+}
+
+.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+/* Content */
+.content {
+  padding: 10px 0;
+}
+
+.content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content li {
+  padding: 8px 0;
+  position: relative;
+  padding-left: 25px;
+  line-height: 1.5;
+}
+
+.content li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* CTA Button */
+.cta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    border-bottom: none;
+  }
+  
+  .tab {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  .active {
+    border-color: #000;
+    background-color: #f0f0f0;
+  }
+}

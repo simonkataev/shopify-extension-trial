@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import ProductFeatures from './ProductFeatures';
+import classNames from 'classnames/bind';
+import styles from './App.css';
+
+const cx = classNames.bind(styles);
 
 const App = () => {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div className="shopify-extension-container">
-      <h2 className="shopify-extension-title">Product Information</h2>
+    <div className={cx('container')}>
+      <h2 className={cx('title')}>Product Information</h2>
       
       {loading ? (
-        <div className="shopify-extension-loading">Loading product features...</div>
+        <div className={cx('loading')}>Loading product features...</div>
       ) : (
         <ProductFeatures />
       )}

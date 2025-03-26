@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import classNames from 'classnames/bind';
+import styles from './ProductFeatures.css';
+
+const cx = classNames.bind(styles);
 
 const ProductFeatures = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -35,12 +39,12 @@ const ProductFeatures = () => {
   ];
 
   return (
-    <div className="product-features">
-      <div className="product-features-tabs">
+    <div className={cx('features')}>
+      <div className={cx('tabs')}>
         {features.map((feature, index) => (
           <button
             key={index}
-            className={`product-features-tab ${activeTab === index ? 'active' : ''}`}
+            className={cx('tab', { active: activeTab === index })}
             onClick={() => setActiveTab(index)}
           >
             {feature.title}
@@ -48,7 +52,7 @@ const ProductFeatures = () => {
         ))}
       </div>
       
-      <div className="product-features-content">
+      <div className={cx('content')}>
         <h3>{features[activeTab].title}</h3>
         <ul>
           {features[activeTab].content.map((item, index) => (
@@ -57,8 +61,8 @@ const ProductFeatures = () => {
         </ul>
       </div>
       
-      <div className="product-features-cta">
-        <button className="product-features-button">
+      <div className={cx('cta')}>
+        <button className={cx('button')}>
           Add to Cart
         </button>
       </div>
